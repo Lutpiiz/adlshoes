@@ -1,0 +1,37 @@
+<div class="container">
+        <h5>Data Layanan</h5>
+        <table class="table table-bordered" id="tabelku">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Layanan</th>
+                    <th>Deskripsi Layanan</th>
+                    <th>Harga Layanan</th>
+                    <th>Estimasi Layanan</th>
+                    <th>Foto Layanan</th>
+                    <th>Opsi</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php foreach ($layanan as $k => $v): ?>
+                <tr>
+                    <td><?php echo $k+1; ?></td>
+                    <td><?php echo $v['nama_layanan']; ?></td>
+                    <td><?php echo $v['deskripsi_layanan']; ?></td>
+                    <td><?php echo $v['harga_layanan']; ?></td>
+                    <td><?php echo $v['estimasi_layanan']; ?></td>
+                    <td>
+                        <img src="<?php echo $this->config->item("url_layanan").$v['foto_layanan'] ?>" alt="" width="200">
+                    </td>
+                    <td>
+                        <a href="<?php echo base_url("layanan/edit/".$v["id_layanan"]) ?>" class="btn btn-warning">Edit</a>
+                        <a href="<?php echo base_url("layanan/hapus/".$v["id_layanan"]) ?>" class="btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+
+            </tbody>
+        </table>
+        <a href="<?php echo base_url("layanan/tambah") ?>" class="btn btn-primary">Tambah Data</a>
+    </div>
