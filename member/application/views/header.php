@@ -33,7 +33,7 @@
                     </li>
                 </ul>
 
-                <?php if($this->session->userdata("id_member")) : ?>
+                <?php if($this->session->userdata("id_customer")) : ?>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +47,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo base_url("akun") ?>" class="nav-link">
-                            <?php echo $this->session->userdata("nama_member") ?>
+                            <?php echo $this->session->userdata("nama_customer") ?>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -56,7 +56,7 @@
                 </ul>
                 <?php endif ?>
 
-                <?php if(!$this->session->userdata("id_member")) : ?>
+                <?php if(!$this->session->userdata("id_customer")) : ?>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="nav-link">Login</a>

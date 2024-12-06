@@ -23,15 +23,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/marketplace2662/member/';
-$config['assets_kategori'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2662/assets/kategori/";
-$config['url_kategori'] = 'http://localhost/marketplace2662/assets/kategori/';
-$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2662/assets/produk/";
-$config['url_produk'] = 'http://localhost/marketplace2662/assets/produk/';
-$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2662/assets/slider/";
-$config['url_slider'] = 'http://localhost/marketplace2662/assets/slider/';
-$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]."/marketplace2662/assets/artikel/";
-$config['url_artikel'] = 'http://localhost/marketplace2662/assets/artikel/';
+$config['base_url'] = 'http://localhost/adlshoes/member/';
+$config['assets_kategori'] = $_SERVER["DOCUMENT_ROOT"]."/adlshoes/assets/kategori/";
+$config['url_kategori'] = 'http://localhost/adlshoes/assets/kategori/';
+$config['assets_produk'] = $_SERVER["DOCUMENT_ROOT"]."/adlshoes/assets/produk/";
+$config['url_produk'] = 'http://localhost/adlshoes/assets/produk/';
+$config['assets_slider'] = $_SERVER["DOCUMENT_ROOT"]."/adlshoes/assets/slider/";
+$config['url_slider'] = 'http://localhost/adlshoes/assets/slider/';
+$config['assets_artikel'] = $_SERVER["DOCUMENT_ROOT"]."/adlshoes/assets/artikel/";
+$config['url_artikel'] = 'http://localhost/adlshoes/assets/artikel/';
 
 /*
 |--------------------------------------------------------------------------
@@ -538,3 +538,5 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+date_default_timezone_set('Asia/Jakarta');

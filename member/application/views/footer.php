@@ -9,16 +9,16 @@
                 <form method="post" action="<?php echo base_url('welcome') ?>">
                     <div class="mb-3">
                         <label>Username</label>
-                        <input type="text" name="email_member" class="form-control" value="<?php echo set_value("email_member") ?>">
+                        <input type="text" name="email_customer" class="form-control" value="<?php echo set_value("email_customer") ?>">
                         <div class="text-danger">
-                            <?php echo form_error("email_member") ?>
+                            <?php echo form_error("email_customer") ?>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label>Password</label>
-                        <input type="text" name="password_member" class="form-control" value="<?php echo set_value("password_member") ?>">
+                        <input type="text" name="password" class="form-control" value="<?php echo set_value("password") ?>">
                         <div class="text-danger">
-                            <?php echo form_error("password_member") ?>
+                            <?php echo form_error("password") ?>
                         </div>
                     </div>
                     <button class="btn btn-primary">Login</button>

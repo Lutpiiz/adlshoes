@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 
 		parent::__construct();
 
-		if(!$this->session->userdata("id_member")){
+		if(!$this->session->userdata("id_customer")){
 			redirect('/','refresh');
 		}
 	}

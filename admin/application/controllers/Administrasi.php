@@ -62,5 +62,15 @@ class Administrasi extends CI_Controller {
         $this->load->view("administrasi_tambah.php");
         $this->load->view("footer");
     }
+
+    function delete($id_customer) {
+        $this->load->model('Madministrasi');
+        if ($this->Madministrasi->delete($id_customer)) {
+            $this->session->set_flashdata('success', 'Data customer berhasil dihapus.');
+        } else {
+            $this->session->set_flashdata('error', 'Data customer gagal dihapus.');
+        }
+        redirect('Administrasi');
+    }
     
 }

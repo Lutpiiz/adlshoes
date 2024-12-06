@@ -10,6 +10,7 @@
     <script>new DataTable('#tabelku');</script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php if ($this->session->flashdata('pesan_sukses')): ?>
     <script>swal("Sukses!", "<?php echo $this->session->flashdata('pesan_sukses'); ?>", "success");</script>
     <?php endif ?>

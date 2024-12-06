@@ -6,8 +6,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$inputan = $this->input->post();
-		$this->form_validation->set_rules("email_member","email","required");
-		$this->form_validation->set_rules("password_member","password","required");
+		$this->form_validation->set_rules("email_customer","email","required");
+		$this->form_validation->set_rules("password","password","required");
 		$this->form_validation->set_message("required","%s wajib diisi");
 
 		if($this->form_validation->run()==TRUE){
@@ -23,17 +23,17 @@ class Welcome extends CI_Controller {
 			}
 		}
 
-		$this->load->model('Mslider');
-		$this->load->model('Mkategori');
-		$this->load->model('Mproduk');
-		$this->load->model('Martikel');
-		$data['slider'] = $this->Mslider->tampil();
-		$data['kategori'] = $this->Mkategori->tampil();
-		$data['produk'] = $this->Mproduk->tampil_produk_terbaru();
-		$data['artikel'] = $this->Martikel->tampil_artikel_terbaru();
+		// $this->load->model('Mslider');
+		// $this->load->model('Mkategori');
+		// $this->load->model('Mproduk');
+		// $this->load->model('Martikel');
+		// $data['slider'] = $this->Mslider->tampil();
+		// $data['kategori'] = $this->Mkategori->tampil();
+		// $data['produk'] = $this->Mproduk->tampil_produk_terbaru();
+		// $data['artikel'] = $this->Martikel->tampil_artikel_terbaru();
 
 		$this->load->view('header');
-		$this->load->view('welcome.php', $data);
+		// $this->load->view('welcome.php', $data);
 		$this->load->view('footer');
 	}
 }

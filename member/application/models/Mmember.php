@@ -3,23 +3,23 @@ class Mmember extends CI_Model
 {
 	function login($inputan)
 	{
-        $email_member = $inputan['email_member'];
-        $password_member = $inputan['password_member'];
-        $password_member = sha1($password_member);
+        $email_customer = $inputan['email_customer'];
+        $password = $inputan['password'];
+        // $password = sha1($password);
          
-        $this->db->where('email_member', $email_member);
-        $this->db->where('password_member', $password_member);
-        $q = $this->db->get('member');
-        $cekmember = $q->row_array(); 
+        $this->db->where('email_customer', $email_customer);
+        $this->db->where('password', $password);
+        $q = $this->db->get('customer');
+        $cekcustomer = $q->row_array(); 
 
-        if(!empty($cekmember)){
-            $this->session->set_userdata("id_member", $cekmember['id_member']);
-            $this->session->set_userdata("email_member", $cekmember['email_member']);
-            $this->session->set_userdata("nama_member", $cekmember['nama_member']);
-            $this->session->set_userdata("alamat_member", $cekmember['alamat_member']);
-            $this->session->set_userdata("wa_member", $cekmember['wa_member']);
-            $this->session->set_userdata("kode_distrik_member", $cekmember['kode_distrik_member']);
-            $this->session->set_userdata("nama_distrik_member", $cekmember['nama_distrik_member']);
+        if(!empty($cekcustomer)){
+            $this->session->set_userdata("id_customer", $cekcustomer['id_customer']);
+            $this->session->set_userdata("email_customer", $cekcustomer['email_customer']);
+            $this->session->set_userdata("nama_customer", $cekcustomer['nama_customer']);
+            $this->session->set_userdata("alamat_customer", $cekcustomer['alamat_customer']);
+            $this->session->set_userdata("wa_customer", $cekcustomer['wa_customer']);
+            $this->session->set_userdata("kode_distrik_customer", $cekcustomer['kode_distrik_customer']);
+            $this->session->set_userdata("nama_distrik_customer", $cekcustomer['nama_distrik_customer']);
             return "ada";
         }else{
             return "ga ada";

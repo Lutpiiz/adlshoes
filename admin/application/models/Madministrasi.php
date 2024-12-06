@@ -22,4 +22,9 @@ class Madministrasi extends CI_Model {
     function simpan($inputan) {
         $this->db->insert('customer', $inputan);
     }
+
+    function delete($id_customer) {
+        $this->db->where('id_customer', $id_customer);
+        return $this->db->delete('customer');
+    }
 }
