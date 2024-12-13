@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    /* color palette */
+    --biru-langit: #D4EBF8;
+    --biru-dongker-muda: #1F509A;
+    --biru-dongker-tua: #0A3981;
+    --orange: #E38E49;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background: var(--biru-langit); */
+    font-family: "Poppins", sans-serif !important;
+    padding-top: 130px;
+    background: url('../image/vecteezy_abstract-sea-waves-background-in-blue-color_20401916.svg') no-repeat top center;
+    background-size: cover;
+}
+
+/* login */
+.login-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(10px); */
+    width: 50%;
+    padding: 30px 30px;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: -150px;
+}
+
+.login-img {
+    display: flex;
+    align-items: center;
+}
+
+.login-button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-submit {
+    width: 45%;
+    background-color: var(--orange) !important;
+}
+
+.button-submit:hover {
+    background-color: #dd6e13 !important;
+}
+
+/* navbar */
+.box {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    z-index: 1000;
+}
+
+.navbar {
+    border-radius: 50px;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.navbar .navbar-brand {
+    color: var(--biru-dongker-tua);
+}
+
+/* home */
+.brand .image{
+    display: flex;
+    justify-content: center;
+    animation: move 2s ease-in-out infinite;
+}
+
+.carousel-inner {
+    border-radius: 30px;
+}
+
+/* service */
+.card {
+    background-color: #f0f0f0 !important;
+}
+
+/* .pesan{
+    background-color: var(--orange) !important;
+}
+
+.pesan:hover {
+    background-color: #d26c18 !important;
+}
+
+.detail{
+    background-color: var(--orange) !important;
+}
+
+.detail:hover {
+    background-color: #d26c18 !important;
+} */
+
+/* order */
+.riwayat {
+    border-radius: 15px; /* Sudut melengkung */
+}
+
+/* form order */
+.form-order {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    margin-top: 200px;
+    background-color: var(--biru-dongker-tua)
+}
+
+@media(max-width: 768px) {
+    
+}
+
+/* animation */
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

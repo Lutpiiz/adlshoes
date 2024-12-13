@@ -15,6 +15,7 @@ class Mlayanan extends CI_Model {
         //kita urusi dulu upload foto layanan
         $config['upload_path'] = $this->config->item("assets_layanan");
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = 2048;
 
         $this->load->library('upload', $config);
 
@@ -46,22 +47,22 @@ class Mlayanan extends CI_Model {
         return $d;
     }
 
-    function edit($inputan, $id_kategori) {
-        //ngurusi foto_kategori jika pengguna upload foto
-        $config['upload_path'] = $this->config->item("assets_kategori");
+    function edit($inputan, $id_layanan) {
+        //ngurusi foto_layanan jika pengguna upload foto
+        $config['upload_path'] = $this->config->item("assets_layanan");
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $this->load->library('upload', $config);
 
         //adegan ngupload
-        $ngupload = $this->upload->do_upload("foto_kategori");
+        $ngupload = $this->upload->do_upload("foto_layanan");
 
         //jika ngupload
         if ($ngupload) {
-            $inputan['foto_kategori'] = $this->upload->data("file_name");
+            $inputan['foto_layanan'] = $this->upload->data("file_name");
         }
 
-        //query update data sesuai id_kategori
-        $this->db->where('id_kategori', $id_kategori);
-        $this->db->update('kategori', $inputan);
+        //query update data sesuai id_layanan
+        $this->db->where('id_layanan', $id_layanan);
+        $this->db->update('layanan', $inputan);
     }
 }

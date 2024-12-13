@@ -23,9 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/adlshoes/admin/';
+$config['base_url'] = 'https://localhost/adlshoes/admin/';
 $config['assets_layanan'] = $_SERVER["DOCUMENT_ROOT"]."/adlshoes/assets/layanan/";
-$config['url_layanan'] = 'http://localhost/adlshoes/assets/layanan/';
+$config['url_layanan'] = 'https://localhost/adlshoes/assets/layanan/';
 
 /*
 |--------------------------------------------------------------------------

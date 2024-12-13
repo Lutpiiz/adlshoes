@@ -50,6 +50,7 @@ class Administrasi extends CI_Controller {
             $this->load->model('Madministrasi');
     
             $inputan['tanggal_daftar'] = date('Y-m-d H:i:s');
+            $inputan['password'] = sha1($inputan['password']);
     
             $this->Madministrasi->simpan($inputan);
     
