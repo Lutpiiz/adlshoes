@@ -12,7 +12,7 @@
             <p class="">Estimasi : <?php echo $value['estimasi_layanan'] ?> hari</p>
             <p class="card-text"><?php echo $value['deskripsi_layanan'] ?></p>
             <p class="fs-5 text-center"><strong>Rp. <?php echo number_format($value['harga_layanan'], 0, ',', '.') ?></strong></p>
-            <div class="d-flex justify-content-center"><a href="<?php echo base_url('service/pesan/'.$value['id_layanan']) ?>" class="btn btn-primary pesan text-white">Pesan Sekarang!</a></div>
+            <div class="d-flex justify-content-center"><a href="<?php echo base_url('service/pesan/'.$value['id_layanan']) ?>" class="btn orange text-white">Pesan Sekarang!</a></div>
           </div>
         </div>
       </div>

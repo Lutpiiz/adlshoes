@@ -18,10 +18,10 @@
         <tr>
           <th scope="row"><?php echo $key+1?></th>
           <td><?php echo $value['tanggal_pesan'] ?></td>
-          <td><?php echo $value['total_transaksi'] ?></td>
+          <td>Rp. <?php echo  number_format($value['total_transaksi'], 0, ',', '.') ?></td>
           <td><?php echo $value['metode_pembayaran'] ?></td>
           <td><?php echo $value['status_transaksi'] ?></td>
-          <td><a href="#!" class="btn btn-primary detail text-white">Detail</a></td>
+          <td><a href="#!" class="btn orange text-white">Detail</a></td>
         </tr>
         <?php endforeach ?>
       </tbody>

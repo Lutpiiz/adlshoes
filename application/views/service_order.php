@@ -45,6 +45,6 @@
       </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Kirim Pesanan</button>
+    <button type="submit" class="btn orange text-white">Kirim Pesanan</button>
   </form>
 </div>

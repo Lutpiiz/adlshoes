@@ -19,18 +19,18 @@ body {
     padding-top: 130px;
     background: url('../image/vecteezy_abstract-sea-waves-background-in-blue-color_20401916.svg') no-repeat top center;
     background-size: cover;
+    min-height: 100vh;
 }
 
 /* login */
 .login-card {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
-    /* -webkit-backdrop-filter: blur(10px); */
+    -webkit-backdrop-filter: blur(10px);
     width: 50%;
     padding: 30px 30px;
     border-radius: 10px;
     margin: auto;
-    margin-bottom: -150px;
 }
 
 .login-img {
@@ -87,26 +87,24 @@ body {
     border-radius: 30px;
 }
 
+.about {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    backdrop-filter: blur(10px);
+}
+
 /* service */
 .card {
     background-color: #f0f0f0 !important;
 }
 
-/* .pesan{
+.orange{
     background-color: var(--orange) !important;
 }
 
-.pesan:hover {
+.orange:hover {
     background-color: #d26c18 !important;
 }
-
-.detail{
-    background-color: var(--orange) !important;
-}
-
-.detail:hover {
-    background-color: #d26c18 !important;
-} */
 
 /* order */
 .riwayat {
@@ -123,13 +121,31 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.account {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.account-form {
+    width: 40%;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
 footer {
     margin-top: 200px;
     background-color: var(--biru-dongker-tua)
 }
 
 @media(max-width: 768px) {
-    
+    .login-card {
+        width: 90%;
+        margin-top: -110px;
+    }
 }
 
 /* animation */

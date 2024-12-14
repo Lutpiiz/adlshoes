@@ -6,7 +6,6 @@
 			<div class="image">
 				<img src="./assets/image/logo_adlshoes.png" alt="" width="300px">
 			</div>
-			<p class="text-center fs-1"><strong>ADL SHOES</strong></p>
 			<p class="text-center fs-5">Step into a brighter day with perfectly cleaned shoes. ADL Shoes – where every
 				step starts fresh and clean!</p>
 		</div>
@@ -42,5 +41,33 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
+	</div>
+</div>
+
+<div class="about">
+	<div class="container">
+		<p class="fs-1 text-center" style="font-weight: 500;">About Us</p>
+		<p class="fs-5 text-center">
+			ADL Shoes adalah penyedia layanan cuci sepatu premium yang menggunakan teknologi modern dan bahan pembersih ramah lingkungan. Kami berkomitmen untuk memberikan kebersihan maksimal tanpa merusak material sepatu Anda, sehingga sepatu Anda terlihat seperti baru kembali. Dengan tenaga ahli berpengalaman, kami memberikan layanan cepat, perhatian pada detail, dan hasil terbaik untuk memenuhi kebutuhan Anda.
+		</p>
+		<p class="fs-1 text-center" style="font-weight: 500;">Visi</p>
+		<p class="fs-5 text-center">
+			Menjadi mitra terpercaya dalam perawatan sepatu premium dengan menghadirkan layanan inovatif dan ramah lingkungan, serta memberikan pengalaman pelanggan terbaik di setiap langkah.
+		</p>
+		<p class="fs-1 text-center" style="font-weight: 500;">Misi</p>
+		<p class="fs-5 text-center">
+			1. Memberikan layanan cuci sepatu berkualitas tinggi dengan teknologi modern yang aman untuk semua jenis material.<br>
+			2. Menjamin kepuasan pelanggan melalui hasil maksimal dan proses yang efisien.<br>
+			3. Mengedepankan nilai keberlanjutan dengan menggunakan bahan pembersih yang ramah lingkungan.<br>
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
 	</div>
 </div>
