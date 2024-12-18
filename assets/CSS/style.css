@@ -15,7 +15,7 @@ html {
 
 body {
     /* background: var(--biru-langit); */
-    font-family: "Poppins", sans-serif !important;
+    font-family: "Parkinsans", sans-serif !important;
     padding-top: 130px;
     background: url('../image/vecteezy_abstract-sea-waves-background-in-blue-color_20401916.svg') no-repeat top center;
     background-size: cover;
@@ -94,8 +94,30 @@ body {
 }
 
 /* service */
+.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height > div {
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
-    background-color: #f0f0f0 !important;
+    background-color: rgba(240, 240, 240, 0.3) !important;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .orange{
@@ -104,6 +126,12 @@ body {
 
 .orange:hover {
     background-color: #d26c18 !important;
+}
+
+.fit-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
 }
 
 /* order */
@@ -121,6 +149,19 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* detail order */
+.detail-order {
+    background: #ecedee;
+    border-radius: 20px;
+}
+
+.fit-detail-image {
+    width: 300px;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+}
+
+/* account */
 .account {
     width: 100%;
     display: flex;

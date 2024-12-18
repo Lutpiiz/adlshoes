@@ -1,11 +1,30 @@
-<!-- main content -->
-<div class="container">
-  <p class="fs-1 text-center" style="font-weight: 500;">My Order</p>
+<?php
+function badge($status)
+{
+    switch ($status) {
+        case 'dipesan':
+            return 'bg-secondary';
+        case 'dibayar':
+            return 'bg-warning';
+        case 'diproses':
+            return 'bg-primary';
+        case 'selesai':
+            return 'bg-success';
+        case 'dibatalkan':
+            return 'bg-danger';
+        default:
+            return 'bg-secondary';
+    }
+}
+?>
+
+<!-- Main Content -->
+<div class="container" data-aos="zoom-in-up">
+  <h1 class="text-center">My Order</h1>
   <div class="table-responsive riwayat">
-    <table class="table table-borderless table-striped table-light">
+    <table class="table table-borderless table-striped table-light text-center">
       <thead>
         <tr>
-          <th scope="col">No</th>
           <th scope="col">Tanggal Pesan</th>
           <th scope="col">Total Pesanan</th>
           <th scope="col">Metode Pembayaran</th>
@@ -14,16 +33,22 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($transaksi as $key => $value) :  ?>
-        <tr>
-          <th scope="row"><?php echo $key+1?></th>
-          <td><?php echo $value['tanggal_pesan'] ?></td>
-          <td>Rp. <?php echo  number_format($value['total_transaksi'], 0, ',', '.') ?></td>
-          <td><?php echo $value['metode_pembayaran'] ?></td>
-          <td><?php echo $value['status_transaksi'] ?></td>
-          <td><a href="#!" class="btn orange text-white">Detail</a></td>
-        </tr>
-        <?php endforeach ?>
+        <?php foreach ($transaksi as $key => $value) : ?>
+          <tr>
+            <td><?php echo date('d F Y H:i', strtotime($value['tanggal_pesan'])); ?></td>
+            <td>Rp. <?php echo number_format($value['total_transaksi'], 0, ',', '.'); ?></td>
+            <td><?php echo ucfirst($value['metode_pembayaran']); ?></td>
+            <td>
+              <span class="badge <?php echo badge($value['status_transaksi']); ?> fs-6">
+                <?php echo ucfirst($value['status_transaksi']); ?>
+              </span>
+            </td>
+            <td>
+              <a href="<?php echo base_url('order/detail/' . $value['id_transaksi']); ?>" 
+                 class="btn orange text-white">Detail</a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>

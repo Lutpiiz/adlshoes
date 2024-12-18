@@ -1,4 +1,4 @@
-<div class="account">
+<div class="account" data-aos="zoom-in">
     <div class="account-form">
         <div class="offset md-2">
             <form method="post">

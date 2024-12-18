@@ -4,6 +4,7 @@ class Mtransaksi extends CI_Model {
         $this->db->select('transaksi.*, customer.*');
         $this->db->from('transaksi');
         $this->db->join('customer', 'transaksi.id_customer = customer.id_customer', 'left');
+        $this->db->order_by('tanggal_pesan', 'desc');
 
         $q = $this->db->get();
         $d = $q->result_array();
@@ -23,14 +24,6 @@ class Mtransaksi extends CI_Model {
         $this->db->where('id_transaksi', $id_transaksi);
         $q = $this->db->get('transaksi');
         $d = $q->row_array();
-
-        return $d;
-    }
-
-    function transaksi_detail($id_transaksi) {
-        $this->db->where('id_transaksi', $id_transaksi);
-        $q = $this->db->get('transaksi_detail');
-        $d = $q->result_array();
 
         return $d;
     }

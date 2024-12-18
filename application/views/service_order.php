@@ -37,10 +37,7 @@
     <div class="mb-3">
       <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>
       <select class="form-control" id="metode_pembayaran" name="metode_pembayaran" required>
-        <option value="transfer">Transfer Bank</option>
-        <option value="dana">Dana</option>
-        <option value="shopeepay">Shopeepay</option>
-        <option value="qris">QRIS</option>
+        <option value="cashless">Cashless</option>
         <option value="cod">Cash on Delivery (COD)</option>
       </select>
     </div>

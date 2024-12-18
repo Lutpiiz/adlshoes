@@ -1,16 +1,16 @@
 <!-- main content -->
-<div class="container">
+<div class="container" data-aos="zoom-in-up">
 	<div class="row">
 		<!-- brand image -->
 		<div class="brand col-md-4">
-			<div class="image">
+			<div class="image" data-aos="fade-down">
 				<img src="./assets/image/logo_adlshoes.png" alt="" width="300px">
 			</div>
-			<p class="text-center fs-5">Step into a brighter day with perfectly cleaned shoes. ADL Shoes – where every
+			<p class="text-center fs-5" data-aos="fade-up">Step into a brighter day with perfectly cleaned shoes. ADL Shoes – where every
 				step starts fresh and clean!</p>
 		</div>
 		<!-- carousel -->
-		<div id="carouselExampleAutoPlaying" class="carousel slide carousel-fade col-md-8" data-bs-ride="carousel">
+		<div data-aos="fade-left" id="carouselExampleAutoPlaying" class="carousel slide carousel-fade col-md-8" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleAutoPlaying" data-bs-slide-to="0" class="active"
 					aria-current="true" aria-label="Slide 1"></button>
@@ -46,16 +46,16 @@
 
 <div class="about">
 	<div class="container">
-		<p class="fs-1 text-center" style="font-weight: 500;">About Us</p>
-		<p class="fs-5 text-center">
+		<h1 class="text-center" data-aos="zoom-in-down">About Us</h1>
+		<p class="fs-5 text-center" data-aos="zoom-in-down">
 			ADL Shoes adalah penyedia layanan cuci sepatu premium yang menggunakan teknologi modern dan bahan pembersih ramah lingkungan. Kami berkomitmen untuk memberikan kebersihan maksimal tanpa merusak material sepatu Anda, sehingga sepatu Anda terlihat seperti baru kembali. Dengan tenaga ahli berpengalaman, kami memberikan layanan cepat, perhatian pada detail, dan hasil terbaik untuk memenuhi kebutuhan Anda.
 		</p>
-		<p class="fs-1 text-center" style="font-weight: 500;">Visi</p>
-		<p class="fs-5 text-center">
+		<h1 class="text-center" data-aos="zoom-in-down">Visi</h1>
+		<p class="fs-5 text-center" data-aos="zoom-in-down">
 			Menjadi mitra terpercaya dalam perawatan sepatu premium dengan menghadirkan layanan inovatif dan ramah lingkungan, serta memberikan pengalaman pelanggan terbaik di setiap langkah.
 		</p>
-		<p class="fs-1 text-center" style="font-weight: 500;">Misi</p>
-		<p class="fs-5 text-center">
+		<h1 class="text-center" data-aos="zoom-in-down">Misi</h1>
+		<p class="fs-5 text-center" data-aos="zoom-in-down">
 			1. Memberikan layanan cuci sepatu berkualitas tinggi dengan teknologi modern yang aman untuk semua jenis material.<br>
 			2. Menjamin kepuasan pelanggan melalui hasil maksimal dan proses yang efisien.<br>
 			3. Mengedepankan nilai keberlanjutan dengan menggunakan bahan pembersih yang ramah lingkungan.<br>

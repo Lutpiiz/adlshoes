@@ -89,6 +89,7 @@
     </div>
     <!-- Copyright -->
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php if ($this->session->flashdata('pesan_sukses')): ?>
@@ -101,6 +102,12 @@
         swal("Gagal!", "<?php echo $this->session->flashdata('pesan_gagal'); ?>", "error");
     </script>
 <?php endif ?>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 
 </html>

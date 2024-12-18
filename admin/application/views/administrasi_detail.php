@@ -45,7 +45,7 @@
                 <?php foreach ($pesanan as $key => $value): ?>
                     <tr>
                         <td><?php echo $key + 1; ?></td>
-                        <td><?php echo $value['tanggal_transaksi']; ?></td>
+                        <td><?php echo $value['tanggal_pesan']; ?></td>
                         <td><?php echo $value['total_transaksi']; ?></td>
                         <td><?php echo $value['status_transaksi']; ?></td>
                         <td>

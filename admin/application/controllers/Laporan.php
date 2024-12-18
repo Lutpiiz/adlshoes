@@ -17,7 +17,7 @@ class Laporan extends CI_Controller {
         // $data['produk'] = $this->Mproduk->tampil();
 
         $this->load->view("header");
-        // $this->load->view("produk_tampil", $data);
+        // $this->load->view("laporan_tampil", $data);
         $this->load->view("footer");
     }
 }
