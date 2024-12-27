@@ -19,8 +19,8 @@
                     <td><?php echo $k+1; ?></td>
                     <td><?php echo $v['nama_layanan']; ?></td>
                     <td><?php echo $v['deskripsi_layanan']; ?></td>
-                    <td><?php echo $v['harga_layanan']; ?></td>
-                    <td><?php echo $v['estimasi_layanan']; ?></td>
+                    <td>Rp. <?php echo number_format($v['harga_layanan'], 0, ',', '.'); ?></td>
+                    <td><?php echo $v['estimasi_layanan']; ?> hari</td>
                     <td>
                         <img src="<?php echo $this->config->item("url_layanan").$v['foto_layanan'] ?>" alt="" width="200">
                     </td>

@@ -24,8 +24,49 @@ class Transaksi extends CI_Controller {
         $data["transaksi"] = $this->Mtransaksi->detail($id_transaksi);
 
         $this->load->view('header');
-        // $this->load->view('transaksi_detail', $data);
+        $this->load->view('transaksi_detail', $data);
         $this->load->view('footer');
+    }
+
+    public function proses($id_transaksi) {
+        $this->load->model('Mtransaksi');
+
+        $updated = $this->Mtransaksi->proses($id_transaksi);
+
+        if ($updated) {
+            $this->session->set_flashdata('pesan_sukses', 'Status transaksi berhasil diubah menjadi diproses.');
+        } else {
+            $this->session->set_flashdata('pesan_gagal', 'Gagal mengubah status transaksi.');
+        }
+
+        redirect('transaksi/detail/' . $id_transaksi);
+    }
+
+    public function selesai($id_transaksi) {
+        $this->load->model('Mtransaksi');
+
+        $updated = $this->Mtransaksi->selesai($id_transaksi);
+
+        if ($updated) {
+            $this->session->set_flashdata('pesan_sukses', 'Status transaksi berhasil diubah menjadi selesai.');
+        } else {
+            $this->session->set_flashdata('pesan_gagal', 'Gagal mengubah status transaksi.');
+        }
+
+        redirect('transaksi/detail/' . $id_transaksi);
+    }
+
+    public function batal($id_transaksi) {
+        $this->load->model('Mtransaksi');
+        $updated = $this->Mtransaksi->batal($id_transaksi);
+
+        if ($updated) {
+            $this->session->set_flashdata('pesan_sukses', 'Pesanan berhasil dibatalkan.');
+        } else {
+            $this->session->set_flashdata('pesan_gagal', 'Gagal membatalkan pesanan.');
+        }
+
+        redirect('transaksi/detail/' . $id_transaksi);
     }
 
 

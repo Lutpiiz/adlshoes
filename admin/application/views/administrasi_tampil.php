@@ -21,7 +21,7 @@
                     <td><?php echo $value['email_customer']; ?></td>
                     <td><?php echo $value['no_telepon']; ?></td>
                     <td><?php echo $value['alamat']; ?></td>
-                    <td><?php echo $value['tanggal_daftar']; ?></td>
+                    <td><?php echo date('d F Y H:i', strtotime($value['tanggal_daftar'])); ?></td>
                     <td>
                         <a href="<?php echo base_url("administrasi/detail/".$value['id_customer']) ?>" class="btn btn-info">Detail</a>
                     </td>

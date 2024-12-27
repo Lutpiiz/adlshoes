@@ -1,5 +1,5 @@
 <!-- main content -->
-<div class="form-order">
+<div class="form-order" data-aos="zoom-in">
   <p class="fs-1 text-center" style="font-weight: 500;">Form Order</p>
 
   <!-- Detail Layanan -->

@@ -1,23 +1,73 @@
 <?php
-class Laporan extends CI_Controller {
-    function __construct()
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Laporan extends CI_Controller
+{
+    public function __construct()
     {
         parent::__construct();
-
-        //jika tidak ada tiket bioskop, maka suruh login
-        if (!$this->session->userdata('id_admin')) {
-            redirect('/', 'refresh');
-        }
+        $this->load->model('Mlaporan');
     }
-    
-    function index() {
 
-        //panggil model Mproduk dan fungsi tampil
-        // $this->load->model("Mproduk");
-        // $data['produk'] = $this->Mproduk->tampil();
+    public function chart_pemasukan()
+    {
+        $data = $this->Mlaporan->pemasukan();
 
-        $this->load->view("header");
-        // $this->load->view("laporan_tampil", $data);
-        $this->load->view("footer");
+        // Format data untuk Highcharts
+        $chart_data = [
+            'categories' => [],
+            'data' => []
+        ];
+
+        foreach ($data as $row) {
+            $chart_data['categories'][] = $row['tanggal']; // Tanggal sebagai kategori
+            $chart_data['data'][] = (float) $row['total_penjualan']; // Total penjualan sebagai nilai
+        }
+
+        // Kirim data dalam format JSON
+        echo json_encode($chart_data);
+    }
+
+    public function chart_layanan()
+    {
+        $data = $this->Mlaporan->layanan_dipesan();
+
+        // Format data untuk Highcharts
+        $chart_data = [];
+        foreach ($data as $row) {
+            $chart_data[] = [
+                'name' => $row['nama_layanan'], 
+                'y' => (int) $row['jumlah_pesan']
+            ];
+        }
+
+        // Kirim data dalam format JSON
+        echo json_encode($chart_data);
+    }
+
+    public function chart_penjualan()
+    {
+        $data = $this->Mlaporan->penjualan_per_hari();
+
+        // Format data untuk Highcharts
+        $chart_data = [
+            'categories' => [],
+            'data' => []
+        ];
+
+        foreach ($data as $row) {
+            $chart_data['categories'][] = $row['tanggal']; // Tanggal sebagai kategori
+            $chart_data['data'][] = (int) $row['jumlah_terjual']; // Jumlah terjual sebagai nilai
+        }
+
+        // Kirim data dalam format JSON
+        echo json_encode($chart_data);
+    }
+
+    public function index()
+    {
+        $this->load->view('header');
+        $this->load->view('laporan_tampil');
+        $this->load->view('footer');
     }
 }

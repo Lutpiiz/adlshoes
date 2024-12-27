@@ -25,7 +25,6 @@
                 </tr>
             </table>
             <div>
-                <a href="" class="btn btn-warning">Edit</a>
                 <a href="#" onclick="confirmDelete(<?php echo $customer['id_customer']; ?>)" class="btn btn-danger">Hapus</a>
             </div>
         </div>

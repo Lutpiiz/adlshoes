@@ -90,7 +90,30 @@
     <!-- Copyright -->
 </footer>
 
+<!-- DataTable -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+<!-- <script>new DataTable('#tabelku');</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Daftarkan format tanggal Anda
+    $.fn.dataTable.moment('D MMMM YYYY HH:mm');
+
+    // Inisialisasi DataTable
+    $('#tabelku').DataTable({
+      order: [[0, 'desc']],
+    });
+  });
+</script>
+
+
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
+
+<!-- Sweet Alert JS -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php if ($this->session->flashdata('pesan_sukses')): ?>
     <script>
@@ -103,6 +126,7 @@
     </script>
 <?php endif ?>
 
+<!-- AOS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init();

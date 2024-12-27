@@ -19,8 +19,8 @@ function badge($status)
 ?>
 
 <!-- main content -->
-<h1 class="text-center">Order Detail</h1>
-<div class="container detail-order p-4" data-aos="zoom-in-up">
+<h1 class="text-center" data-aos="fade-up">Order Detail</h1>
+<div class="container detail-order p-4" data-aos="fade-up">
     <div class="row">
         <div class="row col-lg-6">
             <h5 class="col-sm-4 col-6">Nomor Pesanan</h5>
@@ -77,7 +77,6 @@ function badge($status)
                             <th scope="col">Tipe Pembayaran</th>
                             <th scope="col">Status Pembayaran</th>
                             <th scope="col">Nomor VA</th>
-                            <th scope="col">Kode VA</th>
                             <th scope="col">Waktu Transaksi</th>
                             <th scope="col">Batas Akhir Pembayaran</th>
                         </tr>
@@ -89,8 +88,7 @@ function badge($status)
                             <?php if ($cekmidtrans['transaction_status'] == 'pending'): ?><br>
                                 Segera lakukan pembayaran sebelum waktu habis
                             <?php endif ?></td>
-                        <td><?php echo $cekmidtrans['bill_key'] ?></td>
-                        <td><?php echo $cekmidtrans['biller_code'] ?></td>
+                        <td><?php echo $cekmidtrans['va_numbers'][0]['va_number'] ?></td>
                         <td><?php echo $cekmidtrans['transaction_time'] ?></td>
                         <td><?php echo $cekmidtrans['expiry_time'] ?></td>
                     </tbody>

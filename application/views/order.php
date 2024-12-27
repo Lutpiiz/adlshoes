@@ -19,10 +19,10 @@ function badge($status)
 ?>
 
 <!-- Main Content -->
-<div class="container" data-aos="zoom-in-up">
+<div class="container" data-aos="fade-up">
   <h1 class="text-center">My Order</h1>
-  <div class="table-responsive riwayat">
-    <table class="table table-borderless table-striped table-light text-center">
+  <div>
+    <table class="w-100 table table-borderless table-striped table-light text-center" id="tabelku">
       <thead>
         <tr>
           <th scope="col">Tanggal Pesan</th>
