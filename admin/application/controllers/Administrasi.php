@@ -4,15 +4,12 @@ class Administrasi extends CI_Controller {
     {
         parent::__construct();
 
-        //jika tidak ada tiket bioskop, maka suruh login
         if (!$this->session->userdata('id_admin')) {
             redirect('/', 'refresh');
         }
     }
     
     function index() {
-
-        // panggil model Madminsitrasi
         $this->load->model("Madministrasi");
         $data['customer'] = $this->Madministrasi->tampil();
 

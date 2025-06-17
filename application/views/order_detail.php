@@ -18,6 +18,8 @@ function badge($status)
 }
 ?>
 
+
+
 <!-- main content -->
 <h1 class="text-center" data-aos="fade-up">Order Detail</h1>
 <div class="container detail-order p-4" data-aos="fade-up">
@@ -58,8 +60,23 @@ function badge($status)
             </tbody>
         </table>
         <div class="bg-light p-4">
-            <h5>Nama Customer : <?php echo $transaksi['nama_pemesan'] ?></h5>
-            <h5>Alamat Customer : <?php echo $transaksi['alamat_pemesan'] ?></h5>
+            <table>
+                <tr>
+                    <td>Nama Customer</td>
+                    <td> : <?php echo $transaksi['nama_pemesan'] ?></td>
+                </tr>
+                <tr>
+                    <td>Alamat Customer</td>
+                    <td> : <?php echo $transaksi['link_alamat'] ?></td>
+                </tr>
+                <tr>
+                    <td>Patokan</td>
+                    <td> : <?php echo $transaksi['patokan'] ?></td>
+                </tr>
+            </table>
+
+
+
         </div>
         <?php if (!empty($snapToken)) :  ?>
             <div class="d-flex justify-content-end">

@@ -2,7 +2,6 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
-
 <div class="row">
     <div id="pemasukan" class="col-md-6 px-5 py-3"></div>
     <div id="layanan" class="col-md-6 px-5 py-3"></div>

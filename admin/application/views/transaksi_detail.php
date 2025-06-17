@@ -30,8 +30,9 @@ function badge($status)
         </div>
         <div class="col-md-3 col-6">
             <h5>Pemesan</h5>
-            <p><?php echo $transaksi['nama_pemesan'] ?>, <?php echo $transaksi['no_telepon'] ?></p>
-            <p><?php echo $transaksi['alamat'] ?></p>
+            <p><?php echo $transaksi['nama_pemesan'] ?> <?php echo $transaksi['no_telepon'] ?></p>
+            <p><a href="<?php echo $transaksi['link_alamat'] ?>"><?php echo $transaksi['link_alamat'] ?></a></p>
+            <p><?php echo $transaksi['patokan'] ?></p>
         </div>
         <!-- <div class="col-md-3"></div> -->
         <div class="col-md-6">

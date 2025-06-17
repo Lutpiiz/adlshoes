@@ -45,13 +45,18 @@ class Service extends CI_Controller {
         $data = [
             'id_customer' => $id_customer,
             'nama_pemesan' => $this->input->post('nama'),
-            'alamat_pemesan' => $this->input->post('alamat'),
+            'link_alamat' => $this->input->post('link_alamat'),
+            'patokan' => $this->input->post('patokan'),
             'id_layanan' => $this->input->post('id_layanan'),
             'jumlah_pesan' => $this->input->post('jumlah'),
             'total_transaksi' => $total_transaksi,
             'metode_pembayaran' => $this->input->post('metode_pembayaran'),
             'tanggal_pesan' => date('Y-m-d H:i:s'),
         ];
+
+        if($data['metode_pembayaran'] == 'cod') {
+            $data['status_transaksi'] = 'dibayar';
+        }
     
         $this->db->insert('transaksi', $data);
 
