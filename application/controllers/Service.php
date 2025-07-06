@@ -41,8 +41,10 @@ class Service extends CI_Controller {
         $layanan = $this->Mservice->detail_layanan($id_layanan);
 
         $total_transaksi = $layanan['harga_layanan'] * $jumlah;
+        $kode_transaksi = date('YmdHis') . rand(100, 999);
     
         $data = [
+            'kode_transaksi' => $kode_transaksi,
             'id_customer' => $id_customer,
             'nama_pemesan' => $this->input->post('nama'),
             'link_alamat' => $this->input->post('link_alamat'),

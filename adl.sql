@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2025 at 02:39 PM
+-- Generation Time: Jul 07, 2025 at 01:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -72,7 +72,8 @@ INSERT INTO `customer` (`id_customer`, `nama_customer`, `email_customer`, `passw
 (16, 'Arel', 'arel@gmail.com', 'b1c7123dbdf59c0145f7185a7fad16236193aad9', '081234567890', 'Klaten', '2024-12-26 09:55:56'),
 (17, 'Dhila', 'dhila@gmail.com', '87fb7280378ff87cbc1b40698cd254fb3c5c0811', '080987654321', 'Gunung Kidul', '2024-12-26 09:56:25'),
 (18, 'Asep', 'asep@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '0800000000', 'Yogyakarta', '2024-12-29 23:39:04'),
-(19, 'Paijo', 'paijo99@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '01230123909', 'sleman', '2024-12-29 23:51:04');
+(19, 'Paijo', 'paijo99@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '01230123909', 'sleman', '2024-12-29 23:51:04'),
+(20, 'Haris', 'haris@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '0812345678', 'Kretek, Bantul, DIY', '2025-05-20 18:22:40');
 
 -- --------------------------------------------------------
 
@@ -103,8 +104,7 @@ INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `deskripsi_layanan`, `harga
 (19, 'Women Shoes', 'Cuci sepatu wanita', 20000, 3, 'sepatu-wanita1.jpg'),
 (20, 'Reglue', 'Pengeleman pada sol sepatu', 25000, 7, 'reglue1.png'),
 (21, 'Sewing', 'Jahit sepatu', 45000, 7, 'sewing.png'),
-(23, 'Cuci Kilat', 'cuci kilat banget', 100000, 1, 'deep-cleaning1.jpg'),
-(24, 'aaa', 'aaa', 123, 1, 'leather3.jpg');
+(25, 'Cuci Kilat', 'Cuci sangat kilat', 35000, 1, 'Screenshot_(28).png');
 
 -- --------------------------------------------------------
 
@@ -114,6 +114,7 @@ INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `deskripsi_layanan`, `harga
 
 CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
+  `kode_transaksi` varchar(50) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `nama_pemesan` varchar(100) NOT NULL,
   `link_alamat` varchar(255) NOT NULL,
@@ -131,36 +132,48 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_customer`, `nama_pemesan`, `link_alamat`, `patokan`, `id_layanan`, `jumlah_pesan`, `metode_pembayaran`, `tanggal_pesan`, `id_admin`, `status_transaksi`, `total_transaksi`) VALUES
-(1, 2, 'Yanto Kopling', 'Jakarta', '', 10, 3, 'qris', '2024-12-13 10:45:13', NULL, 'dipesan', NULL),
-(2, 2, 'Budi', 'Jakarta', '', 6, 4, 'transfer', '2024-12-13 11:18:21', NULL, 'dipesan', 160000),
-(3, 2, 'Budi Arie Setiadi', 'Jakarta', '', 7, 2, 'transfer', '2024-12-13 11:19:10', NULL, 'dipesan', 50000),
-(6, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 4, 'transfer', '2024-12-14 14:53:34', NULL, 'dibayar', 100000),
-(7, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 6, 'transfer', '2024-12-14 14:53:50', NULL, 'dibayar', 330000),
-(9, 15, 'Arel', 'Klaten', '', 7, 5, 'shopeepay', '2024-12-16 19:02:17', NULL, 'dibayar', 125000),
-(10, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 6, 1, 'qris', '2024-12-17 14:11:14', NULL, 'dibatalkan', 40000),
-(11, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 3, 'transfer', '2024-12-18 07:24:36', NULL, 'dibayar', 165000),
-(12, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 4, 'transfer', '2024-12-18 07:31:53', NULL, 'selesai', 100000),
-(13, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 6, 2, 'transfer', '2024-12-18 07:33:27', NULL, 'dibatalkan', 80000),
-(14, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 1, 'transfer', '2024-12-18 07:34:35', NULL, 'dibayar', 55000),
-(15, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 1, 'transfer', '2024-12-18 08:18:37', NULL, 'selesai', 55000),
-(16, 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 2, 'cashless', '2024-12-18 08:21:38', NULL, 'dibatalkan', 50000),
-(17, 15, 'Lupi', 'Wakanda', '', 7, 3, 'cashless', '2024-12-18 19:20:29', NULL, 'dibatalkan', 75000),
-(18, 15, 'Lupi', 'Wakanda', '', 10, 3, 'cashless', '2024-12-23 20:01:10', NULL, 'dibatalkan', 165000),
-(19, 15, 'Lupi', 'Wakanda', '', 6, 2, 'cashless', '2024-12-24 23:15:54', NULL, 'selesai', 80000),
-(20, 15, 'Lupi', 'Wakanda', '', 22, 2, 'cashless', '2024-12-26 15:52:06', NULL, 'selesai', 70000),
-(21, 15, 'Lupi', 'Wakanda', '', 18, 1, 'cashless', '2024-12-26 15:52:59', NULL, 'dibatalkan', 20000),
-(22, 16, 'Arel', 'Klaten', '', 20, 4, 'cashless', '2024-12-27 13:36:29', NULL, 'selesai', 100000),
-(23, 16, 'Arel', 'Klaten', '', 16, 3, 'cashless', '2024-12-27 16:52:29', NULL, 'selesai', 180000),
-(24, 16, 'Arel', 'Klaten', '', 7, 1, 'cashless', '2024-12-27 16:54:13', NULL, 'dibatalkan', 25000),
-(25, 16, 'Arel', 'Klaten', '', 17, 1, 'cashless', '2024-12-27 17:33:45', NULL, 'dibayar', 90000),
-(26, 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'Rumah warna hijau selatan jalan', 7, 2, 'cashless', '2024-12-29 22:51:27', NULL, 'dibayar', 50000),
-(27, 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqweqeqweqww', 10, 1, 'cod', '2024-12-29 23:35:01', NULL, 'dibayar', 55000),
-(28, 18, 'Daffa', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'rumah warna hijau pagar hitam', 7, 2, 'cod', '2024-12-29 23:42:51', NULL, 'dibatalkan', 50000),
-(29, 18, 'Asep', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqeqeqw', 7, 1, 'cashless', '2024-12-29 23:43:24', NULL, 'selesai', 25000),
-(30, 19, 'Paijo', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'rumah warna hijau pagar hitam', 7, 2, 'cod', '2024-12-29 23:52:43', NULL, 'dibatalkan', 50000),
-(31, 19, 'Paijo', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqeqwe', 7, 1, 'cashless', '2024-12-29 23:53:01', NULL, 'selesai', 25000),
-(32, 15, 'Radit', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'rumah warna coklat', 6, 5, 'cashless', '2024-12-30 20:21:20', NULL, 'selesai', 200000);
+INSERT INTO `transaksi` (`id_transaksi`, `kode_transaksi`, `id_customer`, `nama_pemesan`, `link_alamat`, `patokan`, `id_layanan`, `jumlah_pesan`, `metode_pembayaran`, `tanggal_pesan`, `id_admin`, `status_transaksi`, `total_transaksi`) VALUES
+(1, '', 2, 'Yanto Kopling', 'Jakarta', '', 10, 3, 'qris', '2024-12-13 10:45:13', NULL, 'dipesan', NULL),
+(2, '', 2, 'Budi', 'Jakarta', '', 6, 4, 'transfer', '2024-12-13 11:18:21', NULL, 'dipesan', 160000),
+(3, '', 2, 'Budi Arie Setiadi', 'Jakarta', '', 7, 2, 'transfer', '2024-12-13 11:19:10', NULL, 'dipesan', 50000),
+(6, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 4, 'transfer', '2024-12-14 14:53:34', NULL, 'dibayar', 100000),
+(7, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 6, 'transfer', '2024-12-14 14:53:50', NULL, 'dibayar', 330000),
+(9, '', 15, 'Arel', 'Klaten', '', 7, 5, 'shopeepay', '2024-12-16 19:02:17', NULL, 'dibayar', 125000),
+(10, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 6, 1, 'qris', '2024-12-17 14:11:14', NULL, 'dibatalkan', 40000),
+(11, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 3, 'transfer', '2024-12-18 07:24:36', NULL, 'dibayar', 165000),
+(12, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 4, 'transfer', '2024-12-18 07:31:53', NULL, 'selesai', 100000),
+(13, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 6, 2, 'transfer', '2024-12-18 07:33:27', NULL, 'dibatalkan', 80000),
+(14, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 1, 'transfer', '2024-12-18 07:34:35', NULL, 'dibayar', 55000),
+(15, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 10, 1, 'transfer', '2024-12-18 08:18:37', NULL, 'selesai', 55000),
+(16, '', 15, 'Lupi', 'Bakulan RT 03, Trirenggo, Bantul', '', 7, 2, 'cashless', '2024-12-18 08:21:38', NULL, 'dibatalkan', 50000),
+(17, '', 15, 'Lupi', 'Wakanda', '', 7, 3, 'cashless', '2024-12-18 19:20:29', NULL, 'dibatalkan', 75000),
+(18, '', 15, 'Lupi', 'Wakanda', '', 10, 3, 'cashless', '2024-12-23 20:01:10', NULL, 'dibatalkan', 165000),
+(19, '', 15, 'Lupi', 'Wakanda', '', 6, 2, 'cashless', '2024-12-24 23:15:54', NULL, 'selesai', 80000),
+(20, '', 15, 'Lupi', 'Wakanda', '', 22, 2, 'cashless', '2024-12-26 15:52:06', NULL, 'selesai', 70000),
+(21, '', 15, 'Lupi', 'Wakanda', '', 18, 1, 'cashless', '2024-12-26 15:52:59', NULL, 'dibatalkan', 20000),
+(22, '', 16, 'Arel', 'Klaten', '', 20, 4, 'cashless', '2024-12-27 13:36:29', NULL, 'selesai', 100000),
+(23, '', 16, 'Arel', 'Klaten', '', 16, 3, 'cashless', '2024-12-27 16:52:29', NULL, 'selesai', 180000),
+(24, '', 16, 'Arel', 'Klaten', '', 7, 1, 'cashless', '2024-12-27 16:54:13', NULL, 'dibatalkan', 25000),
+(25, '', 16, 'Arel', 'Klaten', '', 17, 1, 'cashless', '2024-12-27 17:33:45', NULL, 'dibayar', 90000),
+(26, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'Rumah warna hijau selatan jalan', 7, 2, 'cashless', '2024-12-29 22:51:27', NULL, 'dibayar', 50000),
+(27, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqweqeqweqww', 10, 1, 'cod', '2024-12-29 23:35:01', NULL, 'dibayar', 55000),
+(28, '', 18, 'Daffa', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'rumah warna hijau pagar hitam', 7, 2, 'cod', '2024-12-29 23:42:51', NULL, 'dibatalkan', 50000),
+(29, '', 18, 'Asep', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqeqeqw', 7, 1, 'cashless', '2024-12-29 23:43:24', NULL, 'selesai', 25000),
+(30, '', 19, 'Paijo', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'rumah warna hijau pagar hitam', 7, 2, 'cod', '2024-12-29 23:52:43', NULL, 'dibatalkan', 50000),
+(31, '', 19, 'Paijo', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqeqwe', 7, 1, 'cashless', '2024-12-29 23:53:01', NULL, 'selesai', 25000),
+(32, '', 15, 'Radit', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'rumah warna coklat', 6, 5, 'cashless', '2024-12-30 20:21:20', NULL, 'selesai', 200000),
+(33, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'rumah warna abu-abu pagar putih', 6, 1, 'cashless', '2025-01-02 00:28:07', NULL, 'dibatalkan', 40000),
+(34, '', 15, 'Lupi', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'Rumah gede', 6, 1, 'cod', '2025-01-06 16:13:57', NULL, 'selesai', 40000),
+(35, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'Rumah warna pink', 7, 2, 'cashless', '2025-01-16 20:51:42', NULL, 'dibayar', 50000),
+(36, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'Rumah warna kelap-kelip', 6, 1, 'cashless', '2025-01-16 20:52:55', NULL, 'selesai', 40000),
+(37, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'lkashdfalkjsd', 7, 2, 'cashless', '2025-01-16 21:54:39', NULL, 'dibayar', 50000),
+(38, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'lakshdalksjd', 17, 1, 'cashless', '2025-01-16 23:08:07', NULL, 'dipesan', 90000),
+(39, '', 15, 'Lupi', 'https://maps.app.goo.gl/SL1ird4yysECBLV76', 'kjkjhkjhk', 6, 1, 'cashless', '2025-01-16 23:10:20', NULL, 'dibayar', 40000),
+(40, '', 15, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'qweqweqwe', 6, 1, 'cashless', '2025-01-16 23:13:16', NULL, 'dipesan', 40000),
+(41, '', 14, 'Lupi', 'blablabla', 'blablabla', 20, 1, 'cod', '2025-01-24 00:19:33', NULL, 'dibayar', 25000),
+(42, '', 14, 'Lupi', 'https://maps.app.goo.gl/GYHV5pLpAfVNF6UD9', 'bangjo bakulan', 6, 2, 'cashless', '2025-05-21 15:39:32', NULL, 'dibayar', 80000),
+(43, '', 14, 'Lupi', 'www', 'eqw', 16, 2, 'cashless', '2025-07-06 22:18:11', NULL, 'dipesan', 120000),
+(44, '20250707011305222', 14, 'Lupi', 'jflakdjflaksf', 'qweqweq', 7, 5, 'cashless', '2025-07-07 01:13:05', NULL, 'dibayar', 125000);
 
 --
 -- Indexes for dumped tables
@@ -204,19 +217,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

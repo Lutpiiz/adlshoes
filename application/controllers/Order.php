@@ -41,7 +41,7 @@ class Order extends CI_Controller
 			\Midtrans\Config::$isSanitized = true;
 			\Midtrans\Config::$is3ds = true;
 
-			$params['transaction_details']['order_id'] = $data['transaksi']['id_transaksi'];
+			$params['transaction_details']['order_id'] = $data['transaksi']['kode_transaksi'];
 			$params['transaction_details']['gross_amount'] = $data['transaksi']['total_transaksi'];
 
 
@@ -56,7 +56,7 @@ class Order extends CI_Controller
 			$curl = curl_init();
 
 			curl_setopt_array($curl, array(
-				CURLOPT_URL => "https://api.sandbox.midtrans.com/v2/" . $data['transaksi']['id_transaksi'] . "/status",
+				CURLOPT_URL => "https://api.sandbox.midtrans.com/v2/" . $data['transaksi']['kode_transaksi'] . "/status",
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_ENCODING => "",
 				CURLOPT_MAXREDIRS => 10,
